@@ -33,6 +33,11 @@ public class PedidoController {
         return new ResponseEntity<>(pedidoService.criar(pedidoDTO), HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        pedidoService.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 
     @PatchMapping("/{id}/status")
     public ResponseEntity<PedidoDTO> atualizarStatus(
