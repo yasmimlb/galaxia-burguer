@@ -1,4 +1,4 @@
-# 🚀 Galaxia Burguer - Food Truck Espacial
+# 🚀 Galaxia Burguer - Food Truck Espacial ***
 
 Sistema de pedidos para um food truck intergaláctico, com:
 - **Backend**: Spring Boot + H2 Database
