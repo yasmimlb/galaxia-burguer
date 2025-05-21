@@ -99,9 +99,11 @@ public class PedidoService {
 
     private PedidoDTO convertToDto(Pedido pedido) {
         PedidoDTO pedidoDTO = modelMapper.map(pedido, PedidoDTO.class);
-        pedidoDTO.setLanchesIds(pedido.getLanches().stream()
-                .map(Lanche::getId)
-                .collect(Collectors.toList()));
+        List<String> nomes = pedido.getLanches().stream()
+                .map(Lanche::getNome)
+                .collect(Collectors.toList());
+
+        pedidoDTO.setNomesLanches(nomes);
         return pedidoDTO;
     }
 
