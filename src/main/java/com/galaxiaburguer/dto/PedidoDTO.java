@@ -20,4 +20,5 @@ public class PedidoDTO {
 
     private LocalDateTime dataHora;
     private List<Long> lanchesIds;
+    private List<String> nomesLanches;
 }
