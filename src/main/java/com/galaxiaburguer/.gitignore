@@ -1,0 +1,18 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+
+# IDE
+.idea/
+*.iml
+*.swp
+
+# Banco de dados (H2)
+*.mv.db
+*.trace.db
+
+# Outros
+logs/
+*.log
+.DS_Store

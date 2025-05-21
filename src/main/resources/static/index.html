@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxia Burguer - Food Truck Intergaláctico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+<header class="stellar-header">
+    <div class="header-content">
+        <h1>🍔 GALAXIA BURGUER</h1>
+        <p class="tagline">Sabores que transcendem dimensões!</p>
+    </div>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+</header>
+
+<main class="cosmic-container">
+    <section class="menu-section">
+        <h2>📡 NOSSO CARDÁPIO INTERGALÁCTICO</h2>
+        <div id="lanches-container" class="grid-menu">
+
+        </div>
+    </section>
+
+    <section class="order-section">
+        <h2>🛸 FAÇA SEU PEDIDO</h2>
+        <form id="pedido-form" class="neon-form">
+            <div class="form-group">
+                <label for="lanche-select">Escolha seu lanche:</label>
+                <select id="lanche-select" required>
+                    <option value="">-- Selecione --</option>
+                </select>
+            </div>
+            <button type="submit" class="glow-button">ENVIAR PARA A COZINHA ESPACIAL</button>
+        </form>
+        <div id="pedido-status" class="pedido-status"></div>
+        <div id="pedidos-container" class="pedidos-grid"></div>
+    </section>
+</main>
+
+<footer class="cosmic-footer">
+    <p>© 2036 Galaxia Burguer - Nosso food truck orbita a Terra toda quinta-feira</p>
+    <p>📞 (22) 2509-0000 | 📍 Via Láctea, Andrômeda 42</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

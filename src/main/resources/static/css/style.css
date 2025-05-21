@@ -1,0 +1,241 @@
+:root {
+    --space-purple: #6a0dad;
+    --neon-pink: #ff2a6d;
+    --cosmic-blue: #05d9e8;
+    --stardust-yellow: #d1f7ff;
+    --black-hole: #0d0221;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--black-hole);
+    color: var(--stardust-yellow);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Header Espacial */
+.stellar-header {
+    position: relative;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    background: linear-gradient(to right, var(--neon-pink), var(--cosmic-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 42, 109, 0.3);
+}
+
+.tagline {
+    color: var(--cosmic-blue);
+    font-style: italic;
+}
+
+/* Efeito de Fundo */
+.stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    background: #000 url('../images/stars.png') repeat top center;
+    z-index: 0;
+}
+
+.twinkling {
+    background: transparent url('../images/twinkling.png') repeat top center;
+    z-index: 1;
+    animation: twinkle 200s linear infinite;
+}
+
+@keyframes twinkle {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+/* Container Principal */
+.cosmic-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cardápio */
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.lanche-card {
+    background: rgba(13, 2, 33, 0.8);
+    border: 1px solid var(--space-purple);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.lanche-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
+    border-color: var(--neon-pink);
+}
+
+.lanche-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.lanche-info {
+    padding: 1.5rem;
+}
+
+.lanche-info h3 {
+    color: var(--neon-pink);
+    margin-top: 0;
+}
+
+.preco {
+    font-size: 1.5rem;
+    color: var(--cosmic-blue);
+    font-weight: bold;
+}
+
+/* Formulário */
+.neon-form {
+    background: rgba(13, 2, 33, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--cosmic-blue);
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--cosmic-blue);
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--black-hole);
+    border: 1px solid var(--space-purple);
+    color: white;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+}
+
+.glow-button {
+    width: 100%;
+    background: linear-gradient(45deg, var(--space-purple), var(--neon-pink));
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* Pedidos */
+.pedidos-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pedido-card {
+    background: rgba(106, 13, 173, 0.2);
+    padding: 1rem;
+    border-left: 3px solid var(--neon-pink);
+    border-radius: 4px;
+}
+
+.pedido-status {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Footer */
+.cosmic-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    background: rgba(13, 2, 33, 0.9);
+    position: relative;
+    z-index: 2;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rocket {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--neon-pink);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .grid-menu {
+        grid-template-columns: 1fr;
+    }
+}
