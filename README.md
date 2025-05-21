@@ -1,28 +1,45 @@
-# 🍔 GALAXIA BURGUER - API Spring Boot (UNIPAR)  
+# 🚀 Galaxia Burguer - Food Truck Espacial
 
-**Sistema de gerenciamento para food truck** desenvolvido como trabalho acadêmico para a UNIPAR.  
+Sistema de pedidos para um food truck intergaláctico, com:
+- **Backend**: Spring Boot + H2 Database
+- **Frontend**: HTML/CSS/JavaScript
 
-<div align="center">
-  <img src="https://img.freepik.com/vetores-premium/ilustracao-de-icone-do-vetor-dos-desenhos-animados-do-planeta-hamburguer_480044-292.jpg" width="200" alt="Logo Galaxia Burguer">
-</div>
+## 🛠️ Tecnologias
+- Java 17
+- Spring Boot 3
+- H2 Database (em memória)
+- ModelMapper
+- Lombok
 
-## ✅ Requisitos Atendidos  
-| Item               | Status         |  
-|--------------------|---------------|  
-| **CRUD Spring**    | ✅ Implementado |  
-| **Front-end**      | ✅ HTML + Fetch |  
-| **Banco de Dados** | ✅ H2 (em memória) |  
+## 🔥 Features
+- CRUD completo de lanches e pedidos
+- Frontend integrado com animações
+- Validação customizada (`@ValorDoLancheValido`)
+- Endpoint criativo (`/api/pedidos/aleatorio`)
 
----
+##Adicionais
 
-## 🛠️ Tecnologias  
-- **Back-end**: Spring Boot (Web, JPA), H2 Database  
-- **Front-end**: HTML, CSS, JavaScript (Fetch API)  
-- **Testes**: Insomnia  
+- Tratamento global de erros
 
----
+- DTOs para segurança dos dados
 
-## 🚀 Como Executar  
-1. **Back-end (Spring Boot)**:  
+- Design responsivo
+
+## 🚀 Como Executar
+1. Clone o repositório:
    ```bash
-   ./mvnw spring-boot:run
+   git clone https://github.com/seu-usuario/galaxia-burguer.git
+
+  
+2. Inicie o Spring Boot:
+```bash
+   mvn spring-boot:run
+```
+
+3. Acesse:
+
+- Frontend: http://localhost:8080/index.html
+
+- H2 Console: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:galaxiaburguer)
+
+  
