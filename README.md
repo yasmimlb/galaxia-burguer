@@ -3,7 +3,7 @@
 **Sistema de gerenciamento para food truck** desenvolvido como trabalho acadêmico para a UNIPAR.  
 
 <div align="center">
-  <img src="https://www.canva.com/design/DAGoGSf3M7w/PMsP4o1eLzG9ukM7T4Lq2A/view?utm_content=DAGoGSf3M7w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h112bf4232e" width="200" alt="Logo Galaxia Burguer">
+  <img src="https://img.freepik.com/vetores-premium/ilustracao-de-icone-do-vetor-dos-desenhos-animados-do-planeta-hamburguer_480044-292.jpg" width="200" alt="Logo Galaxia Burguer">
 </div>
 
 ## ✅ Requisitos Atendidos  
