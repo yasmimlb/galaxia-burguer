@@ -239,3 +239,19 @@ select {
         grid-template-columns: 1fr;
     }
 }
+
+.pedido-card {
+    background: rgba(106, 13, 173, 0.2);
+    padding: 1.5rem;
+    border-left: 3px solid var(--neon-pink);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pedido-card p {
+    margin: 0.5rem 0;
+}
+
+.pedido-card strong {
+    color: var(--cosmic-blue);
+}
