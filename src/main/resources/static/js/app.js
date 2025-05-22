@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <p><strong>Pedido #${pedido.id}</strong></p>
                     <p>Status: ${pedido.status}</p>
                     <p>Itens: ${pedido.lanchesIds.length}</p>
+                    <p>Itens: ${pedido.nomesLanches.join(", ")}</p> <!-- AGORA vai mostrar o nome do pedido hehehehe-->
                 </div>
             `).join('');
 
