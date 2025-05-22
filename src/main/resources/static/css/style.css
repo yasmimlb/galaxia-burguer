@@ -272,3 +272,16 @@ select {
 .pedido-card p {
     margin: 0.3rem 0;
 }
+.pedido-card {
+    background: rgba(106, 13, 173, 0.2);
+    padding: 1.5rem;
+    border-left: 3px solid var(--neon-pink);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.lanches-nomes {
+    color: var(--cosmic-blue);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
