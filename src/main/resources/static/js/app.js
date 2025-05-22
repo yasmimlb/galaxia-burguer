@@ -12,13 +12,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             const response = await fetch('/api/lanches');
-            if (!response.ok) throw new Error('Erro na rede');
+            if (!response.ok) throw new Error('Erro ao carregar cardápio');
 
             const lanches = await response.json();
 
+            // Preencher cards de lanches
             lanchesContainer.innerHTML = lanches.map(lanche => `
                 <div class="lanche-card animate__animated animate__fadeIn">
-                    <div class="lanche-image" style="background-image: url('/images/${lanche.id}.jpg'), url('https://via.placeholder.com/300x300/0d0221/6a0dad?text=Imagem+Não+Encontrada')"></div>
+                    <div class="lanche-image" 
+                         style="background-image: url('/images/${lanche.id}.jpg'), 
+                                url('https://via.placeholder.com/300x300/0d0221/6a0dad?text=Imagem+Não+Encontrada')">
+                    </div>
                     <div class="lanche-info">
                         <h3>${lanche.nome}</h3>
                         <p>${lanche.descricao}</p>
@@ -45,21 +49,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             const response = await fetch('/api/pedidos');
-            if (!response.ok) throw new Error('Erro na rede');
+            if (!response.ok) throw new Error('Erro ao carregar pedidos');
 
             const pedidos = await response.json();
 
+            // Preencher lista de pedidos
             pedidosContainer.innerHTML = pedidos.map(pedido => `
-                <div class="pedido-card">
+                <div class="pedido-card animate__animated animate__fadeIn">
                     <p><strong>Pedido #${pedido.id}</strong></p>
-                    <p>Status: ${pedido.status}</p>
-                    <p>Itens: ${pedido.lanchesIds.length}</p>
-                    <p>Itens: ${pedido.nomesLanches.join(", ")}</p> <!-- AGORA vai mostrar o nome do pedido hehehehe-->
+                    <p>Status: ${pedido.status || 'RECEBIDO'}</p>
+                    <p>Itens: ${pedido.lanchesIds?.length || 0}</p>
                 </div>
             `).join('');
 
         } catch (error) {
             pedidosContainer.innerHTML = '<p class="error">🚨 Falha ao carregar pedidos</p>';
+            console.error('Erro:', error);
         }
     };
 
@@ -74,15 +79,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const lancheId = parseInt(lancheSelect.value);
             if (!lancheId) throw new Error('Selecione um lanche');
 
-            // Corpo do pedido no formato EXATO que a API espera
+            // Corpo do pedido
             const response = await fetch('http://localhost:8080/api/pedidos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    lanchesIds: [lancheId], // Array com o ID selecionado
-                    status: "RECEBIDO"      // Status fixo (como no Insomnia)
+                    lanchesIds: [lancheId],
+                    status: "RECEBIDO"
                 })
             });
 
@@ -98,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         } catch (error) {
             pedidoStatus.innerHTML = `<p class="error">Erro: ${error.message}</p>`;
-            console.error("Detalhes do erro:", error); // Verifique no console (F12)
+            console.error("Detalhes do erro:", error);
         } finally {
             button.disabled = false;
             button.textContent = 'ENVIAR PARA A COZINHA ESPACIAL';
