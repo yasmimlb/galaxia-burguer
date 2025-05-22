@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             lanchesContainer.innerHTML = lanches.map(lanche => `
                 <div class="lanche-card animate__animated animate__fadeIn">
-                    <div class="lanche-image" style="background-image: url('images/${lanche.id}.jpg'), url('https://via.placeholder.com/300x300/0d0221/6a0dad?text=Imagem+Não+Encontrada')"></div>
+                    <div class="lanche-image" style="background-image: url('/images/${lanche.id}.jpg'), url('https://via.placeholder.com/300x300/0d0221/6a0dad?text=Imagem+Não+Encontrada')"></div>
                     <div class="lanche-info">
                         <h3>${lanche.nome}</h3>
                         <p>${lanche.descricao}</p>
